@@ -1,16 +1,18 @@
 import string
 import unicodedata
-
 import networkx
-import numpy as np  # linear algebra
+import numpy as np # linear algebra
 import os
-import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import glob
 import json
 import gc
 import random
 import re
 import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 import numpy as np
 stop_words = nltk.corpus.stopwords.words('english')
 from nltk.stem.wordnet import WordNetLemmatizer
