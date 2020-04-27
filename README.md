@@ -7,14 +7,14 @@ In this project COVID-19 research dataset is chosen from kaggle which is prepare
 #### Python indentation is not followed in below code samples.
 
 
-### project2.py--randomfiles(num, alljsonfiles)
+## project2.py--randomfiles(num, alljsonfiles)
 This function takes 2 arguments(number, path list) to select required number of files randomly from all json files. This function returns a list of links. 
 >  alljsonfiles(path list) = glob.glob('CORD-19-research-challenge/**/*.json', recursive=True) \
    def randomfiles(num, alljsonfiles): \
      sampling = random.choices(alljsonfiles, k=int((num * len(alljsonfiles) / 100))) \
      return sampling
      
-### project2.py-- extraxtext(path)
+## project2.py-- extraxtext(path)
 ##### Assumptions made in this step:
 From every paper only paperID and text from body_text is selected.\
 This function take path as argument to extract required data(as specified in assumptions). Json data is loaded and paperID , body_text(text) will be read into a list to pass to further process.This function returns two lists containg paper_id and body_text.
@@ -22,7 +22,7 @@ This function take path as argument to extract required data(as specified in ass
     pap.append(Read_data["paper_id"])
 
     
-### project2.py-- datadf()
+## project2.py-- datadf()
 This function takes no arguments but calles above two functions to extract required data randomly to store it in dataframe. In this function empty values of body_text will be identified to remove. Finally This function returns a dataframe with paper_id and body_text as features.
 
 Getting random file links.
@@ -42,22 +42,39 @@ Stroing in a dataframe.
     df_covid = df_covid.dropna(subset=['body_text'])
     
 
-### project2.py-- normalize_document(txt)
+## project2.py-- normalize_document(txt)
 This function takes text/string as a input and will be normalized(tokenized)
 ##### steps: - 
-All http links are removed from text.\
+All http links are removed from text.
 > txt = re.sub(r'^https?:\/\/.*[\r\n]*', '', txt, flags=re.MULTILINE)
 
-All numbers, punctuations are removed.\
+All numbers, punctuations are removed.
 >  txt = re.sub(r'[^\w\s]', '', txt)
     txt = re.sub(" \d+", " ", txt)
     
-Text is converted into lower cases.\
+Text is converted into lower cases.
 > txt = txt.lower()
 
-Words are tokenized. \
+Words are tokenized. 
 > tokens = nltk.word_tokenize(txt)
 
-Along with english stop words some custom stop words are selected from observing some outputs. \
+Along with english stop words some custom stop words are selected from observing some outputs. 
  > custom_stop_words = ['figure', 'fig', 'fig.', 'www', 'https', 'et', 'al', 'medrxiv', 'biorxiv', 'mol', 'cl', 'moi']
     stop_words.append(custom_stop_words)
+    
+Lemmatizing of words. 
+>  wordnet_lem = [WordNetLemmatizer().lemmatize(w) for w in clean_tokens]
+ 
+ Every step is done one after other finally will be joining while returning.
+ > return ' '.join(wordnet_lem)
+ 
+ 
+## project2.py-- noramizedf()
+This function simply calls above function to normalize every body_text row from our original dataframe and returns noramized dataframe.
+
+Normalizing each row.
+>    for t in data['body_text']: \
+     normalizedlist.append(normalize_document(t)) \
+    df_normalized = pd.DataFrame() \
+    df_normalized["paper_id"] = data['paper_id'] \
+    df_normalized["body_text"] = normalizedlist
