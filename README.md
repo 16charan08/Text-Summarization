@@ -15,7 +15,7 @@ This function takes 2 arguments(number, path list) to select required number of 
      return sampling
      
 ### project2.py-- extraxtext(path)
-### Assumptions made in this step:
+##### Assumptions made in this step:
 From every paper only paperID and text from body_text is selected.\
 This function take path as argument to extract required data(as specified in assumptions). Json data is loaded and paperID , body_text(text) will be read into a list to pass to further process.This function returns two lists containg paper_id and body_text.
 >   Read_data = json.load(i)\
@@ -44,11 +44,20 @@ Stroing in a dataframe.
 
 ### project2.py-- normalize_document(txt)
 This function takes text/string as a input and will be normalized(tokenized)
-
-### Assumptions made in this step:
+##### steps: - 
 All http links are removed from text.\
 > txt = re.sub(r'^https?:\/\/.*[\r\n]*', '', txt, flags=re.MULTILINE)
 
 All numbers, punctuations are removed.\
 >  txt = re.sub(r'[^\w\s]', '', txt)
     txt = re.sub(" \d+", " ", txt)
+    
+Text is converted into lower cases.\
+> txt = txt.lower()
+
+Words are tokenized. \
+> tokens = nltk.word_tokenize(txt)
+
+Along with english stop words some custom stop words are selected from observing some outputs. \
+ > custom_stop_words = ['figure', 'fig', 'fig.', 'www', 'https', 'et', 'al', 'medrxiv', 'biorxiv', 'mol', 'cl', 'moi']
+    stop_words.append(custom_stop_words)
