@@ -5,26 +5,24 @@ In this project COVID-19 research dataset is chosen from kaggle which is prepare
 
 
 #### Python indentation is not followed in below code samples.
-### Assumptions made:
-1) From every paper only paperID and text from body_text is selected.
-2) 
 
 
-### project2--randomfiles.py
+### project2.py--randomfiles(num, alljsonfiles)
 This function takes 2 arguments(number, path list) to select required number of files randomly from all json files. This function returns a list of links. 
 >  alljsonfiles(path list) = glob.glob('CORD-19-research-challenge/**/*.json', recursive=True) \
    def randomfiles(num, alljsonfiles): \
      sampling = random.choices(alljsonfiles, k=int((num * len(alljsonfiles) / 100))) \
      return sampling
      
-### project2-- extraxtext.py
+### project2.py-- extraxtext(path)
+### Assumptions made in this step:
+From every paper only paperID and text from body_text is selected.\
 This function take path as argument to extract required data(as specified in assumptions). Json data is loaded and paperID , body_text(text) will be read into a list to pass to further process.This function returns two lists containg paper_id and body_text.
 >   Read_data = json.load(i)\
     pap.append(Read_data["paper_id"])
 
-
     
-### project2-- datadf.py
+### project2.py-- datadf()
 This function takes no arguments but calles above two functions to extract required data randomly to store it in dataframe. In this function empty values of body_text will be identified to remove. Finally This function returns a dataframe with paper_id and body_text as features.
 
 Getting random file links.
@@ -43,4 +41,14 @@ Stroing in a dataframe.
     df_covid["body_text"].replace('', np.nan, inplace=True) \
     df_covid = df_covid.dropna(subset=['body_text'])
     
- 
+
+### project2.py-- normalize_document(txt)
+This function takes text/string as a input and will be normalized(tokenized)
+
+### Assumptions made in this step:
+All http links are removed from text.\
+> txt = re.sub(r'^https?:\/\/.*[\r\n]*', '', txt, flags=re.MULTILINE)
+
+All numbers, punctuations are removed.\
+>  txt = re.sub(r'[^\w\s]', '', txt)
+    txt = re.sub(" \d+", " ", txt)
