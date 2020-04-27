@@ -16,7 +16,7 @@ This function takes 2 arguments(number, path list) to select required number of 
      
 ## project2.py-- extraxtext(path)
 ##### Assumptions made in this step:
-From every paper only paperID and text from body_text is selected.\
+1) From every paper only paperID and text from body_text is selected.\
 This function take path as argument to extract required data(as specified in assumptions). Json data is loaded and paperID , body_text(text) will be read into a list to pass to further process.This function returns two lists containg paper_id and body_text.
 >   Read_data = json.load(i)\
     pap.append(Read_data["paper_id"])
@@ -78,3 +78,21 @@ Normalizing each row.
     df_normalized = pd.DataFrame() \
     df_normalized["paper_id"] = data['paper_id'] \
     df_normalized["body_text"] = normalizedlist
+
+## project2.py-- clusterfind()
+##### Assumptions made in this step:
+1) From yellowbrick package we can visualize keblow curve using (KElbowVisualizer) which as an attribute "elbow_value_" this value is returned and passed onto next summarization process.
+
+This function finds a best k - value for the choosen data and retruns corresponded vectorized matrix and k -value.
+Vectorization.
+>tfidf_vectorizer = TfidfVectorizer(ngram_range=(3, 4), max_df=0.9, min_df=0.005, sublinear_tf=True)\
+    tfidf_matrix = tfidf_vectorizer.fit_transform(datadf)
+    
+K-means best value.
+
+>km = KMeans(max_iter=10000, n_init=50, random_state=42, n_jobs= -1) \
+    visualizer = KElbowVisualizer(km, k=(2, 15)) \
+    visualizer.fit(tfidf_matrix) \
+    result = [tfidf_matrix,visualizer.elbow_value_]
+    
+ Thus instead of seeing elbow graph and deciding best value of k, this attribute from yellowbrick makes things easy to automate the whole process.
