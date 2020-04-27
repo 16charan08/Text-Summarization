@@ -25,15 +25,15 @@ This function take path as argument to extract required data(as specified in ass
 ## project2.py-- datadf()
 This function takes no arguments but calles above two functions to extract required data randomly to store it in dataframe. In this function empty values of body_text will be identified to remove. Finally This function returns a dataframe with paper_id and body_text as features.
 
-Getting random file links.
+*step1:-* Getting random file links.
 > files = randomfiles(1, alljsonfiles).
 
-Extracting required data.
+*step2:-* Extracting required data.
 > p = extraxtext(f) \
    paper.append(p[0]) \
    text.append(p[1])
    
-Stroing in a dataframe.
+*step3:-* Stroing in a dataframe.
 > df_covid = pd.DataFrame() \
     df_covid['paper_id'] = paper \
     df_covid['body_text'] = text \
@@ -44,28 +44,28 @@ Stroing in a dataframe.
 
 ## project2.py-- normalize_document(txt)
 This function takes text/string as a input and will be normalized(tokenized)
-##### steps: - 
-All http links are removed from text.
+
+*step1:-* All http links are removed from text.
 > txt = re.sub(r'^https?:\/\/.*[\r\n]*', '', txt, flags=re.MULTILINE)
 
-All numbers, punctuations are removed.
+*step1:-* All numbers, punctuations are removed.
 >  txt = re.sub(r'[^\w\s]', '', txt)
     txt = re.sub(" \d+", " ", txt)
     
-Text is converted into lower cases.
+*step3:-* Text is converted into lower cases.
 > txt = txt.lower()
 
-Words are tokenized. 
+*step4:-* Words are tokenized. 
 > tokens = nltk.word_tokenize(txt)
 
-Along with english stop words some custom stop words are selected from observing some outputs. 
+*step5:-* Along with english stop words some custom stop words are selected from observing some outputs. 
  > custom_stop_words = ['figure', 'fig', 'fig.', 'www', 'https', 'et', 'al', 'medrxiv', 'biorxiv', 'mol', 'cl', 'moi']
     stop_words.append(custom_stop_words)
     
-Lemmatizing of words. 
+*step6:-* Lemmatizing of words. 
 >  wordnet_lem = [WordNetLemmatizer().lemmatize(w) for w in clean_tokens]
  
- Every step is done one after other finally will be joining while returning.
+*step7:-* Every step is done one after other finally will be joining while returning.
  > return ' '.join(wordnet_lem)
  
  
@@ -83,16 +83,46 @@ Normalizing each row.
 ##### Assumptions made in this step:
 1) From yellowbrick package we can visualize keblow curve using (KElbowVisualizer) which as an attribute "elbow_value_" this value is returned and passed onto next summarization process.
 
-This function finds a best k - value for the choosen data and retruns corresponded vectorized matrix and k -value.
+*step1:-* This function finds a best k - value for the choosen data and retruns corresponded vectorized matrix and k -value.
 Vectorization.
 >tfidf_vectorizer = TfidfVectorizer(ngram_range=(3, 4), max_df=0.9, min_df=0.005, sublinear_tf=True)\
     tfidf_matrix = tfidf_vectorizer.fit_transform(datadf)
     
-K-means best value.
-
+*step2:-* K-means best value.
 >km = KMeans(max_iter=10000, n_init=50, random_state=42, n_jobs= -1) \
     visualizer = KElbowVisualizer(km, k=(2, 15)) \
     visualizer.fit(tfidf_matrix) \
     result = [tfidf_matrix,visualizer.elbow_value_]
     
  Thus instead of seeing elbow graph and deciding best value of k, this attribute from yellowbrick makes things easy to automate the whole process.
+
+## project2.py-- summarize(k)
+##### Assumptions made in this step:
+1) Summarization is done clustering wise .i.e for each cluster top 8 sentences are selected to write in a document. So finally we will be having k * documents number of documents, where k is number of clusters obtanied from previous function.
+
+This function takes only one argument of best k value obtained from previous function.
+
+*step1:-* Clustering based on k value to find labels and append to original dataframe.
+>km1 = KMeans(n_clusters=k, max_iter=10000, n_init=50, random_state=42) \
+    ck = km1.fit(matrix) \ # matrix from previous function
+    data["labels"] = km1.labels_\
+    df = pd.DataFrame() \
+    df = data \
+    df = df.sort_values(by='labels')\
+    df["body_text"] = data.groupby('labels')['body_text'].transform("".join) \
+    dfset1 = df.body_text.unique()
+ This step finally gives k number of documents which are joined together based on lables from k-means clustering in order.
+
+
+*step2:-* Sentense tokenization and each sentense normalization.
+> sentnorm = [] \
+    sentences = nltk.sent_tokenize(dfset1[et]) \
+        for every in sentences: \
+            sentnorm.append(normalize_document(every)) 
+            
+  In this step, first, sentences are broken and on each sentense our normalized function is applied to store them in sentenwise in another list. So finally after this step we will be having normalized sentenses in a list.
+  
+*step2:-* Vectorization on sentenses to get similarity matrix.
+> cvs = CountVectorizer(ngram_range=(1, 2), min_df=10, max_df=0.8)\
+        cv_matrixs = cvs.fit_transform(sentnorm)\
+        similarity_matrix = (cv_matrixs * cv_matrixs.T)
