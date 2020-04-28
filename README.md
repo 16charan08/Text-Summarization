@@ -122,7 +122,31 @@ This function takes only one argument of best k value obtained from previous fun
             
   In this step, first, sentences are broken and on each sentense our normalized function is applied to store them in sentenwise in another list. So finally after this step we will be having normalized sentenses in a list.
   
-*step2:-* Vectorization on sentenses to get similarity matrix.
+*step3:-* Vectorization on sentenses to get similarity matrix.
 > cvs = CountVectorizer(ngram_range=(1, 2), min_df=10, max_df=0.8)\
         cv_matrixs = cvs.fit_transform(sentnorm)\
         similarity_matrix = (cv_matrixs * cv_matrixs.T)
+This step vectorizes normalized sentenses list
+
+*step4:-*  Next is getting similarity matrix and using Text Ranking getting top sentense indices.
+> similarity_graph = networkx.from_scipy_sparse_matrix(similarity_matrix) \
+        scores = networkx.pagerank(similarity_graph)\ 
+        ranked_sentences = sorted(((score, index)\
+                                   for index, score \
+                                   in scores.items()), reverse=True) \
+        top_sentence_indices = [ranked_sentences[index][1] for index in range(8)] \
+        top_sentence_indices.sort() \
+ This step gets us top ranked indices based on the score.
+ 
+ *step4:-* Writing top sentences of each cluster into each file.
+ > summarizedata = [] \
+        for index in top_sentence_indices: \
+            if os.path.exists("cluster" + str(et)): \
+                append_write = 'a'  # append if already exists \
+            else:\
+                append_write = 'w' \
+            filessum = open("cluster" + str(et), append_write) \
+            filessum.write(sentences[index] + '\n') \
+            filessum.close()
+This step takes indices from previous step and finds original sentences from list of sentences that we tokenized. Thus finally we will be having top sentences per cluster.
+
