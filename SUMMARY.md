@@ -14,7 +14,7 @@
 
 #### Assumption: - Sentences are tokenized using sent_tokenize from nltk, so sentences in each cluster are according to this tokenization which in some clusters may not be appropriate.
 #### Assumption: - Total clustered formed for 1% of data .i.e nearly 600 files are "10". I have tried to run this for 10% of data which is computationaly expensive,I have increased size of instance even though it kept on running straight 13 hours and didn't even get best clusters. So, I am attaching summarized sentences for only 1% data.
-
+#### Assumption: - Foregin Languages will not be handled, there may be some foreign languages otherthan English.
 
 
 #### *Cluster0 summarized sentences:* - 
