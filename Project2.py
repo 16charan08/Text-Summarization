@@ -137,7 +137,7 @@ def summarize(k):
         ranked_sentences = sorted(((score, index)
                                    for index, score
                                    in scores.items()), reverse=True)
-        top_sentence_indices = [ranked_sentences[index][1] for index in range(3)]
+        top_sentence_indices = [ranked_sentences[index][1] for index in range(8)]
         top_sentence_indices.sort()
         print(top_sentence_indices)
         summarizedata = []
