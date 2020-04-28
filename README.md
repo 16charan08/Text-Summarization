@@ -189,10 +189,10 @@ This step takes indices from previous step and finds original sentences from lis
 - To get project folder:- 
 > Run install pipenv
 
-> git clone 
+> git clone https://github.com/16charan08/CS5293Spring2020Project2.git
 
 - For results:- 
 run below command in command line.
-pipenv run python project2.py
+> pipenv run python project2.py
 
 
