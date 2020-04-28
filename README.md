@@ -197,6 +197,6 @@ run below command in command line.
 
 
 ## References
-Summarization part is reffered from text book.\
-Clustering from yellowbrick.
+Summarization part is referred from textbook.\
+Clustering from yellowbrick(https://www.scikit-yb.org/en/latest/_modules/yellowbrick/cluster/elbow.html)
 
