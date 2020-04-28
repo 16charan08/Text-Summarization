@@ -170,7 +170,7 @@ This step vectorizes normalized sentenses list
  
  This step gets us top ranked indices based on the score.
  
- *step4:-* Writing top sentences of each cluster into each file.
+ *step5:-* Writing top sentences of each cluster into each file.
  > summarizedata = [] \
         for index in top_sentence_indices: \
             if os.path.exists("cluster" + str(et)): \
