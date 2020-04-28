@@ -13,7 +13,7 @@
 **step8:-** Finally, using above indices top 8 sentences of each cluster are written into separate file. Thus at the end of the execution we will be having summarized text of each cluster in each file. 
 
 #### Assumption: - Sentences are tokenized using sent_tokenize from nltk, so sentences in each cluster are according to this tokenization which in some clusters may not be appropriate.
-#### Total clustered formed for 1% of data .i.e nearly 600 files are "10". I have tried to run this for 10% of data which is computationaly expensive,I have increased size of instance even though it kept on running straight 13 hours and didn't even get best clusters. So, I am attaching summarized sentences for only 1% data.
+#### Assumption: - Total clustered formed for 1% of data .i.e nearly 600 files are "10". I have tried to run this for 10% of data which is computationaly expensive,I have increased size of instance even though it kept on running straight 13 hours and didn't even get best clusters. So, I am attaching summarized sentences for only 1% data.
 
 
 
