@@ -197,6 +197,7 @@ run below command in command line.
 
 
 ## References
+Nomalization of text from movies data example. \
 Summarization part is referred from textbook.\
 Clustering from yellowbrick(https://www.scikit-yb.org/en/latest/_modules/yellowbrick/cluster/elbow.html)
 
