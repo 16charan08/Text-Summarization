@@ -196,3 +196,7 @@ run below command in command line.
 > pipenv run python project2.py
 
 
+## References
+Summarization part is reffered from text book.\
+Clustering from yellowbrick.
+
