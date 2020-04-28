@@ -3,6 +3,37 @@ In this project COVID-19 research dataset is chosen from kaggle which is prepare
 ### Author :- Ram charan Reddy Kankanala
 ### Email :- Ramcharankankanala@gmail.com
 
+### Packages installed/used 
+pip install pipenv \
+pipenv install numpy &nbsp; \
+pipenv install nltk &nbsp; \
+pipenv install pandas \
+pipenv install yellowbrick \
+pipenv install sklearn \
+pipenv install networkx\
+import networkx \
+import numpy as np  \
+import os \
+import pandas as pd  \
+import glob
+import json\
+import gc\
+import random \
+import re \
+import nltk \
+import numpy as np \
+nltk.download('punkt') \
+nltk.download('stopwords') \
+nltk.download('wordnet') \
+stop_words = nltk.corpus.stopwords.words('english') \
+from nltk.stem.wordnet import WordNetLemmatizer \
+from random import Random \
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer \
+from yellowbrick.cluster import KElbowVisualizer \
+from sklearn.cluster import KMeans \
+from yellowbrick.cluster.elbow import kelbow_visualizer \
+import sklearn
+
 
 #### Python indentation is not followed in below code samples.
 
@@ -136,6 +167,7 @@ This step vectorizes normalized sentenses list
                                    in scores.items()), reverse=True) \
         top_sentence_indices = [ranked_sentences[index][1] for index in range(8)] \
         top_sentence_indices.sort() \
+ 
  This step gets us top ranked indices based on the score.
  
  *step4:-* Writing top sentences of each cluster into each file.
@@ -148,5 +180,6 @@ This step vectorizes normalized sentenses list
             filessum = open("cluster" + str(et), append_write) \
             filessum.write(sentences[index] + '\n') \
             filessum.close()
+
 This step takes indices from previous step and finds original sentences from list of sentences that we tokenized. Thus finally we will be having top sentences per cluster.
 
