@@ -183,3 +183,16 @@ This step vectorizes normalized sentenses list
 
 This step takes indices from previous step and finds original sentences from list of sentences that we tokenized. Thus finally we will be having top sentences per cluster.
 
+
+## Execution
+
+- To get project folder:- 
+> Run install pipenv
+
+> git clone 
+
+- For results:- 
+run below command in command line.
+pipenv run python project2.py
+
+
