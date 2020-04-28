@@ -29,14 +29,35 @@ Causes of CD4 + cell loss include decreased production secondary to bone marrow 
 "
 
 #### *Cluster1 summarized sentences:* - 
-"In the last decades, several viruses emerged, after cross-species passage from animal reservoirs and then spreading in human populations; the Ebola virus, two different coronaviruses causing the severe acute respiratory syndrome (SARS-CoV) and the Middle-east respiratory syndrome (MERS-CoV), and the Nipah virus, are paradigmatic examples of biological agents completely new for humans, with high epidemic potential, but also prone to disappear in case early detection and intervention are ensured (Morse 1993; Fauci and Morens 2012) .
-Because technologies used for viral discovery can be prohibitively expensive and require a high level of expertise, PREDICT virologists compiled a set of relatively simple and inexpensive protocols for the detection of known and novel viruses within viral families that had previously been recognized in animal hosts and known to cause human disease outbreaks, and coupled this cost-effective approach with the selected application of high through-put sequencing (Anthony et al., 2015; Anthony et al., 2013a; Goldstein et al., 2013) .
-In this review, we will discuss the host species barrier for these viruses, concentrating on three questions: how does HPAI H5N1 virus transmit from birds to humans; what are the within-host dynamics of HPAI H5N1 virus and pH1N1 virus in humans and other mammals; and what determines transmission of influenza viruses among humans.
-Also, the difference in pattern of virus attachment between HPAI H5N1 virus and seasonal human H1N1 and H3N2 influenza viruses fits with the difference in primary disease presentation: tracheo-bronchitis for seasonal human influenza viruses, and diffuse alveolar damage for HPAI H5N1 virus infection.
-We used avian influenza viruses, including HPAI H5N1 virus, to represent inefficiently transmitted viruses; and seasonal human H1N1 virus, seasonal human H3N2 virus, and pH1N1 virus to represent efficiently transmitted viruses [24] .
-Four more human coronaviruses have been isolated and described so far: HCoV NL63 (van der Hoek et al., 2004; Abdul-Rasool and Fielding, 2010) , HCoV HKU1 (Woo et al., 2005a; Lau et al., 2006; Vabret et al., 2006) , SARS-CoV (Ksiazek et al., 2003; Rota et al., 2003) , and MERS-CoV (Corman et al., 2012; Zaki et al., 2012) .
-The UbV development platform can also be readily extended to target viruses that infect plants and animals of economic importance, including porcine reproductive and respiratory syndrome virus, equine arteritis virus, bovine coronavirus, transmissible gastroenteritis virus, porcine epidemic diarrhea virus and turnip yellow mosaic virus, all of which encode vDUBs that are essential for virus replication [22] .
-Ciliary loss of the upper respiratory tract has also been described in other viral infections such as Severe Acute Respiratory Syndrome‐CoV in humans (Nicholls et al., 2003), respiratory syncytial virus in humans (Jumat et al., 2015), influenza virus in humans and ferrets (Zeng et al., 2013) and canine respiratory coronavirus in dogs (Mitchell et al., 2013).
+"stroke events), behavioral risk factors (factors leading to the increased risk of a health problem because of an action or task) (e.g., needlestick injury surveillance, adverse drug ev
+ents), birth defects, chronic diseases, clinical syndromes clustering (because of their potential for bioterrorism), dental caries, health-related quality of life (HRQoL), infectious d
+iseases, indicators of the potential for infectious diseases in humans (e.g., surveillance of dead birds in identifying emergence of West Nile Virus), injuries, preventive service util
+ization, procedure utilization (e.g., assisted reproductive technology), and health problems whose prevalence is expected to markedly increase over time (e.g., epilepsy) (Centers for D
+isease Control, 2008; Chowdhury et al., 2007; Pelletier et al., 2005; Piriyawat et al., 2002; Wright et al., 2008; Zahran et al., 2005) , and other health problems (e.g., nonfatal malt
+reatment of infants).
+Since then, a number of viral and bacterial antigens have been expressed in a variety of plant species (McGarvey et al., 1995; Thanavala et al., 1995; Carrillo et al., 1998; Gomez et a
+l., 1998; Modelska et al., 1998; Tacket et al., 1998; Wigdorovitz et al., 1999) .
+The arguments for high prevalence of cryptosporidiosis in humans include (a) infection is commonest during the first 3 years of life (Hojlyng et al., 1984; Mathan et al., 1985; Addy an
+d Aikins-Bekoe, 1986; Wolfson et al., 1985; Baxby and Hart, 1984) ; (b) outbreaks are uncommon except in daycare centres for the reason mentioned in (a); (c) the disease is less common
+ and occurs only sporadically in adults because of frequent previous exposure, not age-related innate resistance, since diarrhoea, when it occurs, can be at least as severe in adults a
+s in children (Hunt et al., 1984) ; and (d) the prevalence of diarrhoea appears to be less in neonates compared with infants of 6 months or older (Mata, 1986; Mathan et al., 1985) , be
+cause of protection by maternal antibody resulting from the mother's own frequent exposure.
+Epstein et al., 1964 Hepatitis B Immunology 1967 Hepatocellular carcinoma (HCC) Blumberg et al., 1967 HTLV-1 Cell culture 1980 Adult T cell leukemia Poiesz et al., 1980 Papillomavirus 
+(high risk 16 and 18) Nucleotide acid hybridization [1983] [1984] Cervical carcinoma, head and neck carcinoma, anogenital cancer Durst et al., 1983; Boshart et al., 1984 Hepatitis C cD
+NA cloning 1989 HCC Choo et al., 1989 Kaposi's sarcoma associated herpesvirus Representational difference analysis 1994 Kaposi's sarcoma, primary effusion lymphoma, Castleman's disease
+ Chang et al., 1994 Merkel cell polyomavirus Digital transcriptome subtraction 2008 Merkel cell carcinoma Feng et al., 2008 METHODS USED FOR THE HUMAN TUMOR VIRUS DISCOVERIES
+By the early 1960s, many viruses were known to cause tumors in animals (Javier and Butel, 2008) , but none had been identified in human cancers.
+For many cases where virus infection has been examined in the context of macrophage depletion, an early/innate role for macrophages in control of the infection has been deduced (Ben-Na
+than et al., 1996; Pribul et al., 2008; Rivera et al., 2007; Seiler et al., 1997; Zisman et al., 1970; Zisman et al., 1971) .
+However, macrophage depletion also appears to affect the adaptive immune response to some viruses, including ectromelia virus, mouse hepatitis virus A59, and hAd vectors examined in mi
+ce (Karupiah et al., 1996; Kuzmin et al., 1997; Kuzmin et al., 2001; Lieber et al., 1997; Shifrin et al., 2005; Wijburg et al., 1997) .
+In most infection models using CCR2 -/mice there are increases in replication of the infectious agent compared to control mice, for example, infection with Toxoplasma gondii, Cryptococ
+cus neoformans, Listeria monocytogenes, Aspergillus fumigatus, mouse cytomegalovirus, and neurotropic mouse hepatitis virus (Benevides et al., 2008; Blease et al., 2000; Chen et al., 2
+001; Dunay et al., 2008; Held et al., 2004; Hokeness et al., 2005; Kurihara et al., 1997; Traynor et al., 2000) .
+It was subsequently shown that carbohydrate chains on filovirus GP, especially on the MLR, are recognized by other cellular C-type lectins such as dendritic cell- and liver/lymph node-
+specific ICAM-3-grabbing non-integrin (DC/L-SIGN) (Alvarez et al., 2002; Lin et al., 2003; Simmons et al., 2003a; Marzi et al., 2004; Gramberg et al., 2008), human macrophage galactose
+-type C-type lectin (hMGL) (Takada et al., 2004; Matsuno et al., 2010a), and liver and lymph node sinusoidal endothelial cell C-type lectin (LSECtin) (Gramberg et al., 2005; Dominguez-
+Soto et al., 2007; Powlesland et al., 2008).                                           
 "
 
 #### *Cluster2 summarized sentences:* - 
