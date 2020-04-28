@@ -23,11 +23,8 @@ from sklearn.cluster import KMeans
 from yellowbrick.cluster.elbow import kelbow_visualizer
 import sklearn
 
-# seed = 6000
-# rand = Random(seed)
+
 alljsonfiles = glob.glob('CORD-19-research-challenge/**/*.json', recursive=True)
-
-
 def randomfiles(num, alljsonfiles):
     sampling = random.choices(alljsonfiles, k=int((num * len(alljsonfiles) / 100)))
     return sampling
@@ -49,13 +46,12 @@ def extraxtext(path):
 def datadf():
     paper = []
     text = []
-    files = randomfiles(10, alljsonfiles)
+    files = randomfiles(1, alljsonfiles)
     # print(len(files))
     res_list = []
     for i in range(0, len(alljsonfiles)):
         if alljsonfiles[i] in files:
             res_list.append(i)
-    # print(len(res_list))
     for f in files:
         p = extraxtext(f)
         paper.append(p[0])
@@ -70,12 +66,8 @@ def datadf():
     return result
 
 
-data = datadf()[0]  # original data frame creation
-indices = datadf()[0]  # Data selected indices from alljson files
-
-
-# datadf().to_csv("out.csv")
-# from lecture
+data = datadf()[0]  
+indices = datadf()[0]  
 
 
 def normalize_document(txt):
@@ -102,10 +94,6 @@ def noramizedf():
     df_normalized["paper_id"] = data['paper_id']
     df_normalized["body_text"] = normalizedlist
     return df_normalized
-
-
-# print(df_normalized.head(5))
-# print(noramizedf()['body_text'][0])
 
 
 def clusterfind():
@@ -139,12 +127,9 @@ def summarize(k):
     for et in range(0, len(dfset1)):
         count = 0
         sentnorm = []
-        # sentences = []
         sentences = nltk.sent_tokenize(dfset1[et])
-        # print(len(sentences))
         for every in sentences:
             sentnorm.append(normalize_document(every))
-        # print(sentnorm)
         cvs = CountVectorizer(ngram_range=(1, 2), min_df=10, max_df=0.8)
         cv_matrixs = cvs.fit_transform(sentnorm)
         similarity_matrix = (cv_matrixs * cv_matrixs.T)
@@ -160,14 +145,14 @@ def summarize(k):
         summarizedata = []
         for index in top_sentence_indices:
             if os.path.exists("cluster" + str(et)):
-                append_write = 'a'  # append if already exists
+                append_write = 'a'  
             else:
                 append_write = 'w'
             filessum = open("cluster" + str(et), append_write)
             filessum.write(sentences[index] + '\n')
             filessum.close()
 
-    return summarizedata  # print(sentences[index])
+    return summarizedata  
 
 
 summarize(k)
