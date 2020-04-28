@@ -130,6 +130,7 @@ Vectorization.
 ## project2.py-- summarize(k)
 ##### Assumptions made in this step:
 1) Summarization is done clustering wise .i.e for each cluster top 8 sentences are selected to write in a document. So finally we will be having k * documents number of documents, where k is number of clusters obtanied from previous function.
+2) Sentences are tokenized using sent_tokenize from nltk, so sentences in each cluster are according to this tokenization which in some clusters may not be appropriate.
 
 This function takes only one argument of best k value obtained from previous function.
 
