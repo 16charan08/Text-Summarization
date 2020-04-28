@@ -76,6 +76,8 @@ This function takes no arguments but calles above two functions to extract requi
     
 
 ## project2.py-- normalize_document(txt)
+##### Assumptions made in this step:
+1) Foregin Languages will not be handled, there may be some foreign languages otherthan English.
 This function takes text/string as a input and will be normalized(tokenized)
 
 *step1:-* All http links are removed from text.
