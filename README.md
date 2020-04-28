@@ -54,6 +54,8 @@ This function take path as argument to extract required data(as specified in ass
 
     
 ## project2.py-- datadf()
+##### Assumptions made in this step:
+1) Everytime data is randomly generated.
 This function takes no arguments but calles above two functions to extract required data randomly to store it in dataframe. In this function empty values of body_text will be identified to remove. Finally This function returns a dataframe with paper_id and body_text as features.
 
 *step1:-* Getting random file links.
