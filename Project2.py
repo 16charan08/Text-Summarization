@@ -39,7 +39,6 @@ def extraxtext(path):
     for j in Read_data["body_text"]:
         bodytext.append(j["text"])
     bodytext = '\n'.join(bodytext)
-
     return pap, bodytext
 
 
@@ -105,7 +104,7 @@ def clusterfind():
     tfidf_matrix = tfidf_vectorizer.fit_transform(datadf)
     km = KMeans(max_iter=10000, n_init=50, random_state=42, n_jobs= -1)
     visualizer = KElbowVisualizer(km, k=(2, 15))
-    visualizer.fit(tfidf_matrix)        # Fit the data to the visualizer
+    visualizer.fit(tfidf_matrix)        
     result = [tfidf_matrix,visualizer.elbow_value_]
     return result
 
@@ -141,7 +140,6 @@ def summarize(k):
         top_sentence_indices = [ranked_sentences[index][1] for index in range(3)]
         top_sentence_indices.sort()
         print(top_sentence_indices)
-
         summarizedata = []
         for index in top_sentence_indices:
             if os.path.exists("cluster" + str(et)):
@@ -151,7 +149,6 @@ def summarize(k):
             filessum = open("cluster" + str(et), append_write)
             filessum.write(sentences[index] + '\n')
             filessum.close()
-
     return summarizedata  
 
 
