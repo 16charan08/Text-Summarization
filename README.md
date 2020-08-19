@@ -1,4 +1,4 @@
-# CS5293Spring2020Project2
+# Text-Summarization
 In this project COVID-19 research dataset is chosen from kaggle which is prepared by different research groups for research purposes, randoly 10% of all files will be selected randomly to summarize them with respect to clusters formed.
 ### Author :- Ram charan Reddy Kankanala
 ### Email :- Ramcharankankanala@gmail.com
@@ -195,7 +195,7 @@ This step takes indices from previous step and finds original sentences from lis
 - To get project folder:- 
 > Run install pipenv
 
-> git clone https://github.com/16charan08/CS5293Spring2020Project2.git
+> git clone https://github.com/16charan08/Text-Summarization.git
 
 - For results:- 
 run below command in command line.
